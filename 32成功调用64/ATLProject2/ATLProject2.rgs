@@ -1,0 +1,15 @@
+HKCR
+{
+    NoRemove CLSID
+    {
+        NoRemove {3A68BEBC-3A60-46A5-8CA1-508C1406B73D} = s 'x64Message.App'
+        {
+            ProgID = s 'x64Message.App'
+            LocalServer32 = s '%MODULE%'
+        }
+    }
+    x64Message.App = s 'MessageApplication'
+    {
+        CLSID = s '{3A68BEBC-3A60-46A5-8CA1-508C1406B73D}'
+    }
+}

@@ -1,0 +1,26 @@
+﻿import "oaidl.idl";
+import "ocidl.idl";
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[object, dual, uuid(28F54187-9D26-46DE-9809-4CADCB1F84D7), oleautomation]
+interface IDMessage : IDispatch
+{
+	[id(1)] HRESULT Show([in]VARIANT szText);
+};
+
+[
+	uuid(4a02363c-cbc1-403a-905e-8ae116ccd454),
+	version(1.0),
+]
+library ATLProject2Lib
+{
+	importlib("stdole2.tlb");
+
+	[uuid(3A68BEBC-3A60-46A5-8CA1-508C1406B73D)]
+	coclass Message
+	{
+		interface IDMessage;
+	};
+};
