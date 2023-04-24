@@ -1,0 +1,27 @@
+﻿import "oaidl.idl";
+import "ocidl.idl";
+
+[object, uuid(59371D05-3025-4E52-AF88-977B219F0E97)]
+interface IMessage : IUnknown
+{
+	HRESULT Show([in]VARIANT szText);
+};
+
+[
+	uuid(4a02363c-cbc1-403a-905e-8ae116ccd454),
+	version(1.0),
+]
+library ATLProject2Lib
+{
+	importlib("stdole2.tlb");
+
+	[uuid(3A68BEBC-3A60-46A5-8CA1-508C1406B73D)]
+	coclass Message
+	{
+		interface IMessage;
+	};
+};
+
+// 需要手动注册ATLProjectPS的dll
+// regsvr32 D:\zzg\COM跨进程组件开发\ATLProject2\x64\Debug\ATLProject2PS.dll
+// 注册成功就可以调用EXE了
